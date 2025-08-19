@@ -1,0 +1,53 @@
+.card {
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-subtle);
+    padding: 2.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Para que todas las tarjetas tengan la misma altura en un grid */
+}
+
+.quote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+    flex-grow: 1;
+    /* Empuja al autor hacia abajo */
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.quote::before {
+    content: '“';
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    font-size: 5rem;
+    color: var(--accent-insane);
+    opacity: 0.1;
+    font-style: normal;
+}
+
+
+.author {
+    margin-top: auto;
+    /* Pega al autor al final */
+    text-align: left;
+    font-style: normal;
+}
+
+.authorName {
+    display: block;
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    color: var(--text-title);
+    font-size: 1.1rem;
+}
+
+.authorCompany {
+    color: var(--accent-insane);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,91 @@
+/* Definición del nuevo universo oscuro */
+:root {
+    --background-dark: #0A0A0A;
+    --background-card: #141414;
+    --text-primary: #EAEAEA;
+    --text-title: #FFFFFF;
+    --accent-insane: #9F00FF;
+    /* Violeta Eléctrico */
+    --border-subtle: #2a2a2a;
+
+    --font-family-body: 'Inter', sans-serif;
+    --font-family-heading: 'Poppins', sans-serif;
+
+    --container-width: 1140px;
+    --header-height: 80px;
+}
+
+/* Reset radical y base oscura */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-body);
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    padding-top: var(--header-height);
+    min-height: calc(100vh - 100px);
+}
+
+a {
+    color: var(--accent-insane);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-title);
+}
+
+/* Estilos de tipografía con personalidad */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-family-heading);
+    color: var(--text-title);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* Tipografía fluida */
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    max-width: 65ch;
+    /* Mejora la legibilidad */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Eliminamos el fondo gris alterno, todo es oscuridad */
+section {
+    padding: 5rem 0;
+}

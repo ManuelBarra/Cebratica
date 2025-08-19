@@ -1,0 +1,27 @@
+.btn {
+    padding: 15px 35px;
+    font-family: var(--font-family-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--accent-insane);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn.primary {
+    background-color: var(--accent-insane);
+    color: var(--text-title);
+}
+
+.btn.primary:hover {
+    color: var(--accent-insane);
+    background-color: transparent;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--accent-insane);
+}

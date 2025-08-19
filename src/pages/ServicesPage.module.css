@@ -1,0 +1,74 @@
+/* --- 1. INTRO --- */
+.intro {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.intro h1 {
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.introText {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* --- 2. PLANES --- */
+.plans {
+    padding-top: 0;
+}
+
+.plansGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    /* Asegura que las tarjetas se estiren si tienen alturas diferentes */
+}
+
+@media(min-width: 992px) {
+    .plansGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- 3. BRANDING SECTION --- */
+.brandingSection {
+    background-color: var(--background-card);
+    text-align: center;
+}
+
+.brandingSection div {
+    max-width: 800px;
+}
+
+.brandingSection h2 {
+    color: var(--accent-insane);
+}
+
+.brandingSection strong {
+    color: var(--text-title);
+}
+
+/* --- 4. FINAL CTA --- */
+.finalCta {
+    text-align: center;
+}
+
+.finalCta div {
+    max-width: 700px;
+    border: 1px solid var(--border-subtle);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+.finalCta h2 {
+    margin-bottom: 1rem;
+}
+
+.finalCta p {
+    margin-bottom: 2rem;
+}
