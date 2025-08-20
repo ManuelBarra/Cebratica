@@ -2,41 +2,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0;
-}
-
-.loginForm {
-    width: 100%;
-    max-width: 400px;
+    min-height: 100vh;
     padding: 2rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: white;
 }
 
-.loginForm h2 {
+.loginBox {
+    /* Aplicamos el efecto cristal */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border-glass);
+    padding: 3rem;
+    width: 100%;
+    max-width: 450px;
     text-align: center;
-    margin-bottom: 2rem;
 }
 
-.formGroup {
-    margin-bottom: 1.5rem;
-}
-
-.formGroup label {
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-title);
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--glow-color);
+    transition: all 0.3s ease;
     display: block;
+    margin-bottom: 1rem;
+}
+
+.logo:hover {
+    color: var(--accent-insane);
+}
+
+.title {
     margin-bottom: 0.5rem;
 }
 
-.formGroup input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.subtitle {
+    font-family: var(--font-family-mono);
+    color: var(--text-primary);
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+}
+
+.loginForm {
+    text-align: left;
 }
 
 .error {
-    color: red;
+    color: #ff6b6b;
+    /* Un rojo neón para el error */
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-family-mono);
 }

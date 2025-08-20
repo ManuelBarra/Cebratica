@@ -1,30 +1,23 @@
 import styles from './Form.module.css';
 
-const Input = ({
-    label,
-    type = 'text',
-    name,
-    placeholder,
-    value,
-    onChange,
-}) => {
+const Textarea = ({ label, name, placeholder, value, onChange }) => {
     return (
         <div className={styles.formGroup}>
             <label htmlFor={name} className={styles.label}>
                 {label}
             </label>
-            <input
-                type={type}
+            <textarea
                 id={name}
                 name={name}
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                className={styles.input}
+                className={`${styles.input} ${styles.textarea}`}
+                rows="5"
                 required
-            />
+            ></textarea>
         </div>
     );
 };
 
-export default Input;
+export default Textarea;

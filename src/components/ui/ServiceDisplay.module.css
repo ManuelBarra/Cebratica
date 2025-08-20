@@ -1,0 +1,57 @@
+.serviceCard {
+    /* Aplicamos el efecto cristal que definimos */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border-glass);
+    padding: 2.5rem;
+    height: 100%;
+}
+
+.cardHeader {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: var(--font-family-mono);
+    color: var(--accent-insane);
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.description {
+    margin-bottom: 2rem;
+    min-height: 120px;
+    /* Ayuda a alinear visualmente las listas */
+}
+
+.featuresList {
+    list-style: none;
+    padding: 0;
+}
+
+.featuresList li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 1rem;
+}
+
+/* Creamos una viñeta futurista */
+.featuresList li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-insane);
+    font-family: var(--font-family-mono);
+    font-weight: 700;
+    text-shadow: 0 0 8px var(--glow-color);
+}

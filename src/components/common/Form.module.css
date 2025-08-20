@@ -1,0 +1,65 @@
+.formGroup {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-family-mono);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-glass);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--text-title);
+    font-family: var(--font-family-body);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    outline: none;
+    border-color: var(--accent-insane);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.textarea {
+    resize: vertical;
+}
+
+/* Estilos personalizados para el Select */
+.selectWrapper {
+    position: relative;
+}
+
+.select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.selectWrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: var(--accent-insane);
+    pointer-events: none;
+}

@@ -1,7 +1,7 @@
 /* --- 1. INTRO --- */
 .intro {
     text-align: center;
-    padding: 5rem 2rem;
+    padding-bottom: 4rem;
 }
 
 .intro h1 {
@@ -9,66 +9,86 @@
     margin: 0 auto 1.5rem auto;
 }
 
-.introText {
-    max-width: 700px;
+.intro p {
+    max-width: 750px;
     margin: 0 auto;
     font-size: 1.2rem;
     opacity: 0.9;
 }
 
-/* --- 2. PLANES --- */
-.plans {
-    padding-top: 0;
-}
-
-.plansGrid {
+/* --- 2 & 3. SERVICES GRID --- */
+.servicesGrid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    align-items: stretch;
-    /* Asegura que las tarjetas se estiren si tienen alturas diferentes */
 }
 
-@media(min-width: 992px) {
-    .plansGrid {
-        grid-template-columns: repeat(3, 1fr);
+@media (min-width: 992px) {
+    .servicesGrid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/* --- 3. BRANDING SECTION --- */
-.brandingSection {
-    background-color: var(--background-card);
+/* --- 4. FUSION SECTION --- */
+.fusionSection {
     text-align: center;
 }
 
-.brandingSection div {
-    max-width: 800px;
-}
-
-.brandingSection h2 {
-    color: var(--accent-insane);
-}
-
-.brandingSection strong {
+.fusionContent {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    border-radius: 15px;
+    position: relative;
+    background: linear-gradient(135deg, var(--accent-insane), #4a00e0);
     color: var(--text-title);
 }
 
-/* --- 4. FINAL CTA --- */
+.fusionContent h2 {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.fusionBenefits {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    font-family: var(--font-family-heading);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fusionBenefits span {
+    color: var(--text-title);
+    margin-right: 1rem;
+    font-weight: 700;
+}
+
+/* --- 5. FINAL CTA --- */
 .finalCta {
     text-align: center;
 }
 
-.finalCta div {
-    max-width: 700px;
-    border: 1px solid var(--border-subtle);
+.ctaBox {
+    /* Usamos el estilo de cristal aquí */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border-glass);
     padding: 3rem;
-    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.finalCta h2 {
-    margin-bottom: 1rem;
+.ctaBox h2 {
+    margin-bottom: 1.5rem;
 }
 
-.finalCta p {
-    margin-bottom: 2rem;
+.ctaBox p {
+    margin: 0 auto 2rem auto;
 }

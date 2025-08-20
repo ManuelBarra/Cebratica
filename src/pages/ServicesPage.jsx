@@ -1,117 +1,98 @@
 import { Link } from 'react-router-dom';
 import Button from '../components/common/Button';
-import PlanCard from '../components/ui/PlanCard';
+import ServiceDisplay from '../components/ui/ServiceDisplay';
 import styles from './ServicesPage.module.css';
 
-// Datos de los planes para mantener el código JSX limpio y organizado
-const battlePlans = [
-    {
-        planNumber: 'Plan 1',
-        title: 'El Despegue Digital',
-        subtitle: 'El Kit de Supervivencia para dejar de dar vergüenza online.',
-        targetAudience:
-            "El emprendedor valiente que necesita un paracaídas digital... urgentemente. O cualquiera cuya web actual fue hecha por un familiar en 2010 como un 'favor'.",
-        features: [
-            'Diseño profesional a partir de una base sólida y personalizada.',
-            'Hasta 5 páginas estratégicas (Inicio, Nosotros, Servicios, etc.).',
-            'Adaptable a móviles y tablets (porque es 2025).',
-            'Formulario de contacto funcional.',
-            'Entrega rápida para ponerte en el mapa digital YA.',
-        ],
-        vibe: 'Profesional, rápido y directo al grano.',
-        ctaText: 'Lo Necesito YA',
-        isPopular: false,
-    },
-    {
-        planNumber: 'Plan 2',
-        title: 'La Máquina de Negocio',
-        subtitle:
-            'Nuestra opción más popular. Convierte visitantes en clientes.',
-        targetAudience:
-            'El negocio que ya no juega en el patio y quiere sentarse en la mesa de los adultos. Para empresas que buscan generar leads y hacer que su competencia sude frío.',
-        features: [
-            'Todo lo del Despegue Digital, Y ADEMÁS:',
-            'Diseño 100% a medida y exclusivo, creado desde cero.',
-            'Arquitectura web pensada para la conversión.',
-            'Blog integrado y optimizado para que Google te quiera.',
-            'Fundamentos de SEO técnico para que te encuentren.',
-            'Integración con tus herramientas de marketing (Mailchimp, CRM, etc.).',
-        ],
-        vibe: 'Estratégico, potente y orientado a resultados.',
-        ctaText: 'Quiero esta Máquina',
-        isPopular: true,
-    },
-    {
-        planNumber: 'Plan 3',
-        title: 'El Imperio Online',
-        subtitle: 'La solución a medida para los que no se conforman con poco.',
-        targetAudience:
-            'Los visionarios, los inconformistas y las empresas con necesidades complejas que quieren una plataforma que haga de todo menos el café (estamos en ello).',
-        features: [
-            'Todo lo de la Máquina de Negocio, Y ADEMÁS:',
-            'Funcionalidades a la carta: E-commerce, reservas, área de miembros...',
-            'Tienda online a prueba de adictos a las compras.',
-            'Optimización de rendimiento avanzada para que tu web vuele.',
-            'Consultoría estratégica incluida.',
-            'Soporte prioritario (los emperadores no hacen cola).',
-        ],
-        vibe: 'Ilimitado, a medida y absolutamente dominante.',
-        ctaText: 'Construir mi Imperio',
-        isPopular: false,
-    },
-];
+// --- DATOS PARA LOS COMPONENTES ---
+const brandingService = {
+    title: 'Branding y Exorcismo de Marca',
+    subtitle: 'El Arte del Diseñador',
+    description:
+        'Una marca mediocre es un fantasma: invisible y olvidada al instante. No creamos logos, invocamos personalidades. Nos sumergimos en el ADN de tu negocio para darle un rostro, una voz y un alma tan potentes que tus clientes no podrán sacársela de la cabeza.',
+    features: [
+        'Un logo y sistema visual que se tatúa en la mente de tus clientes.',
+        'Una paleta de colores y tipografías que hablan por sí solas.',
+        'Una guía de estilo a prueba de becarios para una marca coherente.',
+        "El tono de voz que te convierte en 'la única opción'.",
+    ],
+};
+
+const webDevService = {
+    title: 'Desarrollo Web y Alquimia Digital',
+    subtitle: 'La Lógica del Programador',
+    description:
+        'Tener una marca increíble sin una web que la respalde es como tener un Ferrari sin motor. Construimos ese motor. Creamos plataformas rápidas, seguras e intuitivas. Porque un cliente frustrado es un cliente perdido.',
+    features: [
+        'Un diseño web a medida que convierte tu marca en una experiencia.',
+        'Una web a prueba de balas: veloz, segura y perfecta en cualquier pantalla.',
+        'Cimientos de SEO técnico para que dejes de jugar al escondite con Google.',
+        'Integraciones fluidas con las herramientas que te hacen ganar dinero.',
+    ],
+};
 
 const ServicesPage = () => {
     return (
         <>
             {/* 1. INTRODUCCIÓN */}
             <section className={`${styles.intro} container`}>
-                <h1>No vendemos webs. Vendemos armas de conquista digital.</h1>
-                <p className={styles.introText}>
-                    Bienvenido a nuestro arsenal. Aquí, el Diseñador y el
-                    Programador han forjado tres soluciones para tres batallas
-                    diferentes. Elige tu arma. Nosotros nos encargamos de que dé
-                    en el blanco.
-                </p>
-            </section>
-
-            {/* 2. PLANES DE BATALLA */}
-            <section className={`${styles.plans} container`}>
-                <div className={styles.plansGrid}>
-                    {battlePlans.map((plan) => (
-                        <PlanCard key={plan.title} {...plan} />
-                    ))}
-                </div>
-            </section>
-
-            {/* 3. SECCIÓN DE BRANDING */}
-            <section className={styles.brandingSection}>
-                <div className="container">
-                    <h2>Un momento... ¿Y mi marca?</h2>
-                    <p>
-                        Una web increíble con un logo horrible es como un
-                        Ferrari con tapacubos de plástico. Simplemente no
-                        funciona. Si aún no tienes una identidad visual sólida,
-                        no te preocupes. Ofrecemos servicios de{' '}
-                        <strong>Branding y Exorcismo de Marca</strong>. Podemos
-                        empezar por ahí. Pregúntanos por nuestros paquetes
-                        combinados.
-                    </p>
-                </div>
-            </section>
-
-            {/* 4. CTA FINAL */}
-            <section className={`${styles.finalCta} container`}>
-                <h2>¿No sabes qué plan es para ti?</h2>
+                <h1>Una marca que seduce. Una web que ejecuta.</h1>
                 <p>
-                    Es normal. No te venderemos un tanque para una pelea de
-                    almohadas. Conversemos, cuéntanos tu proyecto y te daremos
-                    un diagnóstico honesto sobre el arma que realmente
-                    necesitas.
+                    Bienvenido a la zona de guerra. Aquí, el Diseñador insiste
+                    en que la belleza lo salvará todo, mientras el Programador
+                    argumenta que sin una lógica impecable, todo está perdido.
+                    Tienen razón los dos. Hemos convertido su eterno conflicto
+                    en tu mayor ventaja competitiva.
                 </p>
-                <Link to="/contacto">
-                    <Button>Pide tu Diagnóstico Gratuito</Button>
-                </Link>
+            </section>
+
+            {/* 2 y 3. SERVICIOS PRINCIPALES */}
+            <section className="container">
+                <div className={styles.servicesGrid}>
+                    <ServiceDisplay {...brandingService} />
+                    <ServiceDisplay {...webDevService} />
+                </div>
+            </section>
+
+            {/* 4. LA OFERTA COMBINADA */}
+            <section className={`${styles.fusionSection} container`}>
+                <div className={styles.fusionContent}>
+                    <h2>El Movimiento Maestro: La Fusión</h2>
+                    <p>
+                        Esto no es un paquete, es una declaración de
+                        intenciones. Es lo que sucede cuando el arte y la lógica
+                        conspiran juntos desde el primer boceto. No obtienes una
+                        marca y "luego" una web. Obtienes un ecosistema digital
+                        nacido para ser coherente, diseñado para dominar y
+                        construido para durar.
+                    </p>
+                    <ul className={styles.fusionBenefits}>
+                        <li>
+                            <span>+</span> Una Personalidad sin Fisuras
+                        </li>
+                        <li>
+                            <span>+</span> Eficiencia Brutal
+                        </li>
+                        <li>
+                            <span>+</span> Impacto Exponencial
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            {/* 5. CTA FINAL */}
+            <section className={`${styles.finalCta} container`}>
+                <div className={styles.ctaBox}>
+                    <h2>¿Cuál de tus problemas es más urgente?</h2>
+                    <p>
+                        Quizás tu marca tiene el pulso débil. O tal vez tu web
+                        está en soporte vital. O, como suele ocurrir, necesitas
+                        una resurrección completa. Conversemos y te daremos un
+                        diagnóstico honesto sobre lo que realmente te urge.
+                    </p>
+                    <Link to="/contacto">
+                        <Button>Pedir Diagnóstico Gratuito</Button>
+                    </Link>
+                </div>
             </section>
         </>
     );

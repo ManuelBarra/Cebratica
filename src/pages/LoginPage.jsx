@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import useAuthStore from '../store/authStore';
 import Button from '../components/common/Button';
+import Input from '../components/common/Input'; // Reutilizamos el Input futurista
 import styles from './LoginPage.module.css';
 
 const LoginPage = () => {
@@ -13,40 +14,45 @@ const LoginPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Credenciales "hardcodeadas" para el ejemplo
         if (username === 'admin' && password === 'cebratica2025') {
             login();
             navigate('/dashboard');
         } else {
-            setError('Usuario o contraseña incorrectos.');
+            setError('Credenciales incorrectas. Acceso denegado.');
         }
     };
 
     return (
         <div className={styles.loginContainer}>
-            <form onSubmit={handleSubmit} className={styles.loginForm}>
-                <h2>Acceso al Dashboard</h2>
-                <div className={styles.formGroup}>
-                    <label htmlFor="username">Usuario</label>
-                    <input
-                        type="text"
-                        id="username"
+            <div className={styles.loginBox}>
+                <Link to="/" className={styles.logo}>
+                    Cebratica
+                </Link>
+                <h2 className={styles.title}>Acceso al Laboratorio</h2>
+                <p className={styles.subtitle}>
+                    Área restringida para clientes y conspiradores.
+                </p>
+
+                <form onSubmit={handleSubmit} className={styles.loginForm}>
+                    <Input
+                        label="Identificador de Agente"
+                        name="username"
+                        placeholder="Ej: admin"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="password">Contraseña</label>
-                    <input
+                    <Input
+                        label="Clave de Acceso"
                         type="password"
-                        id="password"
+                        name="password"
+                        placeholder="••••••••••••"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                </div>
-                {error && <p className={styles.error}>{error}</p>}
-                <Button type="submit">Iniciar Sesión</Button>
-            </form>
+                    {error && <p className={styles.error}>{error}</p>}
+                    <Button type="submit">Autenticar</Button>
+                </form>
+            </div>
         </div>
     );
 };

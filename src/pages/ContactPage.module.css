@@ -1,23 +1,122 @@
-.contactWrapper {
-    max-width: 800px;
-    margin: 0 auto;
+.intro {
     text-align: center;
-    border: 1px solid var(--border-subtle);
-    background-color: var(--background-card);
-    padding: 4rem;
-    border-radius: 10px;
+    padding-bottom: 0;
 }
 
-.textSection h2 {
-    color: var(--accent-insane);
-    margin-bottom: 2rem;
+.intro h1 {
+    margin-bottom: 0.5rem;
 }
 
-.textSection p {
-    font-size: 1.1rem;
-    max-width: 100%;
+.intro p {
+    font-family: var(--font-family-mono);
+}
+
+.mainLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .mainLayout {
+        grid-template-columns: 2fr 1.2fr;
+    }
 }
 
 .formSection {
-    margin-top: 3rem;
+    /* Usamos el efecto cristal aquí */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border-glass);
+    padding: 3rem;
+}
+
+.formIntro {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Columna Derecha */
+.processBox {
+    border: 1px solid var(--border-glass);
+    border-radius: 15px;
+    padding: 2.5rem;
+    height: 100%;
+    background: rgba(159, 0, 255, 0.05);
+    /* Un sutil tinte de nuestro acento */
+}
+
+.processBox h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+    color: var(--accent-insane);
+}
+
+.processList {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: step-counter;
+}
+
+.processList li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.processList li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: var(--accent-insane);
+    color: var(--text-title);
+    border-radius: 50%;
+    font-family: var(--font-family-mono);
+    font-weight: 700;
+}
+
+/* Sección Alternativa */
+.alternativeContact {
+    text-align: center;
+    border-top: 1px solid var(--border-glass);
+}
+
+.alternativeContact h2 {
+    margin-bottom: 1rem;
+}
+
+.emailLink {
+    display: inline-block;
+    margin: 1rem 0;
+    font-family: var(--font-family-mono);
+    font-size: 1.5rem;
+    color: var(--accent-insane);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.emailLink:hover {
+    border-color: var(--accent-insane);
+    border-radius: 8px;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 1rem auto 0 auto;
 }

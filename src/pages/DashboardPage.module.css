@@ -1,13 +1,54 @@
 .dashboard {
-    background-color: white !important;
-    /* Sobrescribe el background de sección */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.headerTitle p {
+    font-family: var(--font-family-mono);
+    opacity: 0.8;
+}
+
+.headerActions {
+    display: flex;
+    gap: 1rem;
     align-items: center;
-    margin-bottom: 2rem;
+}
+
+.logoutButton {
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-family-body);
+    transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+    background-color: var(--border-glass);
+    color: var(--text-title);
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+.tableContainer {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border-glass);
+    padding: 1rem;
+    overflow-x: auto;
+    /* Para responsividad en tablas */
 }
 
 .projectsTable {
@@ -17,21 +58,85 @@
 
 .projectsTable th,
 .projectsTable td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    padding: 1.25rem;
     text-align: left;
+    vertical-align: middle;
+}
+
+.projectsTable thead {
+    border-bottom: 1px solid var(--border-glass);
 }
 
 .projectsTable th {
-    background-color: var(--light-gray-color);
-    font-weight: bold;
+    font-family: var(--font-family-mono);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--text-primary);
 }
 
-.projectsTable td img {
-    border-radius: 4px;
+.projectsTable tbody tr {
+    transition: background-color 0.3s ease;
 }
 
-.actions {
+.projectsTable tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.projectsTable tbody tr:not(:last-child) {
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.projectCell {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    color: var(--text-title);
+}
+
+.projectImage {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid var(--border-glass);
+}
+
+.descriptionCell {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    max-width: 400px;
+}
+
+.actionsHeader {
+    text-align: right !important;
+}
+
+.actionsCell {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.actionButton {
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.actionButton.edit:hover {
+    border-color: var(--accent-insane);
+    background-color: rgba(159, 0, 255, 0.1);
+    color: var(--text-title);
+}
+
+.actionButton.delete:hover {
+    border-color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
 }

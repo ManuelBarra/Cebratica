@@ -1,12 +1,21 @@
+/* Heredamos el estilo .glassCard de HomePage, pero con estructura propia */
 .card {
-    background-color: var(--background-dark);
-    border: 1px solid var(--border-subtle);
+    /* ¡Importante! Aplicamos el estilo de cristal aquí también */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid var(--border-glass);
     padding: 2.5rem;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Para que todas las tarjetas tengan la misma altura en un grid */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(159, 0, 255, 0.5);
+    box-shadow: 0 0 30px var(--glow-color);
 }
 
 .quote {
@@ -14,29 +23,19 @@
     line-height: 1.6;
     font-style: italic;
     flex-grow: 1;
-    /* Empuja al autor hacia abajo */
     margin-bottom: 2rem;
     color: var(--text-primary);
     position: relative;
 }
 
-.quote::before {
-    content: '“';
-    position: absolute;
-    top: -2rem;
-    left: -1rem;
-    font-size: 5rem;
-    color: var(--accent-insane);
-    opacity: 0.1;
-    font-style: normal;
-}
-
+/* Omitimos la comilla gigante para un look más limpio y tech */
 
 .author {
     margin-top: auto;
-    /* Pega al autor al final */
     text-align: left;
     font-style: normal;
+    border-top: 1px solid var(--border-glass);
+    padding-top: 1rem;
 }
 
 .authorName {
@@ -50,4 +49,5 @@
 .authorCompany {
     color: var(--accent-insane);
     font-size: 0.9rem;
+    font-family: var(--font-family-mono);
 }
